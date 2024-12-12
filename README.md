@@ -28,6 +28,57 @@ The model is trained on the **Oxford Flowers 102** dataset, which contains **102
 ## **Setup and Installation**
 
 ### **Prerequisites**
+Steps to Run the Project
+Clone the repository:
+
+bash
+نسخ الكود
+git clone https://github.com/your-username/image-classifier.git
+Train the model:
+
+Navigate to the project directory and run the following command to train the model on the dataset:
+bash
+نسخ الكود
+python train_model.py
+This will save the trained model as a .h5 file.
+Test the model:
+
+After training the model, you can test it by running:
+bash
+نسخ الكود
+python predict.py --image_path path_to_your_image
+The model will output the predicted class along with the probability.
+(Optional) Use top-K predictions:
+
+To get top-K predictions, run the script with the --top_k parameter:
+bash
+نسخ الكود
+python predict.py --image_path path_to_your_image --top_k 5
+(Optional) Map class names to categories:
+
+If you want to map predicted class numbers to human-readable category names, make sure to pass the --category_names argument:
+bash
+نسخ الكود
+python predict.py --image_path path_to_your_image --category_names category_names.json
+File Structure
+bash
+نسخ الكود
+image-classifier/
+│
+├── train_model.py          # Script for training the model
+├── predict.py              # Script for predicting class of an image
+├── model.h5                # Saved trained model (generated after training)
+├── category_names.json     # JSON file containing the mapping of class numbers to human-readable names
+└── README.md               # This file
+Contribution
+Feel free to fork this project, create issues, and submit pull requests. If you have suggestions or bug reports, please open an issue on GitHub.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Thanks to the Oxford Flowers 102 dataset for providing the data used in training the model.
+Special thanks to Abdelrhman Wahdan for providing guidance and support throughout the project.
 
 - **Python 3.x** installed on your machine.
 - Install the required Python libraries by running the following command:
